@@ -45,7 +45,7 @@ export const ParallaxBg = () => {
 
     const stars: HTMLElement[] = gsap.utils.toArray(allStarsClasses.join(", "));
 
-    stars.forEach((star, index) => {
+    stars.forEach((star) => {
       const size = parseInt(
         (star as HTMLElement).className.match(/star-size-(\d+)/)?.[1] || "1"
       );
