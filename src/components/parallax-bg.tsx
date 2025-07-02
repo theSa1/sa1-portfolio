@@ -1,8 +1,6 @@
 "use client";
 
 import gsap from "gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import ScrollSmoother from "gsap/dist/ScrollSmoother";
 import { useGSAP } from "@gsap/react";
 import { JSX, useEffect, useState } from "react";
 
