@@ -101,7 +101,7 @@ export default function Home() {
     <div>
       <ParallaxBg />
       <header className="fixed top-5 left-0 right-0 z-50 w-full flex items-stretch justify-center gap-2">
-        <div className="h-8 aspect-square rounded-full border border-stone-200 backdrop-blur-md bg-white/5 shadow-2xl flex items-center justify-center font-bold text-2xl cursor-default">
+        <div className="h-8 aspect-square rounded-full border border-stone-200 backdrop-blur-md bg-white/5 shadow-2xl items-center justify-center font-bold text-2xl cursor-default hidden sm:flex">
           S
         </div>
         <nav className=" rounded-full border border-stone-200 backdrop-blur-md p-1 space-x-2 bg-white/5 shadow-2xl h-8 flex">
@@ -133,19 +133,23 @@ export default function Home() {
       </header>
       <div className="p-5 pt-0 max-w-[65ch] mx-auto">
         <div className="h-dvh flex flex-col justify-center">
-          <h1 className="text-4xl font-bold" id="hero-line-1">
+          <div className="h-16 sm:h-0"></div>
+          <h1 className="sm:text-4xl text-3xl font-bold" id="hero-line-1">
             Hey! 👋
           </h1>
-          <h2 className="text-5xl mt-2 font-semibold" id="hero-line-2">
+          <h2
+            className="sm:text-5xl text-4xl mt-2 font-semibold"
+            id="hero-line-2"
+          >
             I&apos;m Savan
           </h2>
-          <p className="mt-8 text-[#bbb]" id="hero-para">
+          <p className="sm:mt-8 mt-6 text-[#bbb]" id="hero-para">
             I&apos;m a fullstack developer focused on building solutions that
             address real-world challenges. I have a strong interest in DevOps
             and enjoy working across infrastructure and cutting-edge backend
             technologies. I create efficient, scalable applications for the web.
           </p>
-          <div className="mt-8 flex space-x-4" id="hero-social-links">
+          <div className="sm:mt-8 mt-6 flex space-x-4" id="hero-social-links">
             {socialLinks.map((link) => {
               const Icon = link.icon;
               return (
@@ -162,7 +166,7 @@ export default function Home() {
             })}
           </div>
           <div
-            className="flex items-center justify-center mt-8"
+            className="flex items-center justify-center sm:mt-8 mt-6"
             id="hero-scroll-indicator"
           >
             <ScrollIndicator className="w-8 h-8 text-[#bbb] animate-bounce duration-1000" />
