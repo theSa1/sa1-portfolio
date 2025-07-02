@@ -100,46 +100,46 @@ export default function Home() {
   return (
     <div>
       <ParallaxBg />
-      <header className="fixed top-5 left-0 right-0 z-50 w-full flex items-stretch justify-center gap-4">
-        <div className="h-10 aspect-square rounded-full border border-stone-200 backdrop-blur-md bg-white/5 shadow-2xl flex items-center justify-center font-bold text-3xl cursor-default">
+      <header className="fixed top-5 left-0 right-0 z-50 w-full flex items-stretch justify-center gap-2">
+        <div className="h-8 aspect-square rounded-full border border-stone-200 backdrop-blur-md bg-white/5 shadow-2xl flex items-center justify-center font-bold text-2xl cursor-default">
           S
         </div>
-        <nav className=" rounded-full border border-stone-200 backdrop-blur-md p-1 space-x-2 bg-white/5 shadow-2xl h-10 flex">
+        <nav className=" rounded-full border border-stone-200 backdrop-blur-md p-1 space-x-2 bg-white/5 shadow-2xl h-8 flex">
           <a
             href="#about"
-            className="px-4 h-full flex items-center hover:bg-stone-200 hover:text-stone-950 transition-colors duration-300 rounded-full border border-stone-200 bg-white/20"
+            className="px-4 h-full text-xs flex items-center hover:bg-stone-200 hover:text-stone-950 transition-colors duration-300 rounded-full border border-stone-200 bg-white/20"
           >
             Home
           </a>
           <a
             href="#projects"
-            className="px-4 h-full flex items-center hover:bg-stone-200 hover:text-stone-950 transition-colors duration-300 rounded-full"
+            className="px-4 h-full text-xs flex items-center hover:bg-stone-200 hover:text-stone-950 transition-colors duration-300 rounded-full"
           >
             About
           </a>
           <a
             href="#projects"
-            className="px-4 h-full flex items-center hover:bg-stone-200 hover:text-stone-950 transition-colors duration-300 rounded-full"
+            className="px-4 h-full text-xs flex items-center hover:bg-stone-200 hover:text-stone-950 transition-colors duration-300 rounded-full"
           >
             Projects
           </a>
           <a
             href="#contact"
-            className="px-4 h-full flex items-center hover:bg-stone-200 hover:text-stone-950 transition-colors duration-300 rounded-full"
+            className="px-4 h-full text-xs flex items-center hover:bg-stone-200 hover:text-stone-950 transition-colors duration-300 rounded-full"
           >
             Contact
           </a>
         </nav>
       </header>
-      <div className="p-5 pt-0 max-w-[700px] mx-auto">
+      <div className="p-5 pt-0 max-w-[65ch] mx-auto">
         <div className="h-dvh flex flex-col justify-center">
           <h1 className="text-4xl font-bold" id="hero-line-1">
             Hey! 👋
           </h1>
-          <h2 className="text-6xl mt-2 font-semibold" id="hero-line-2">
+          <h2 className="text-5xl mt-2 font-semibold" id="hero-line-2">
             I&apos;m Savan
           </h2>
-          <p className="text-lg mt-8 text-[#bbb]" id="hero-para">
+          <p className="mt-8 text-[#bbb]" id="hero-para">
             I&apos;m a fullstack developer focused on building solutions that
             address real-world challenges. I have a strong interest in DevOps
             and enjoy working across infrastructure and cutting-edge backend
@@ -169,11 +169,11 @@ export default function Home() {
           </div>
         </div>
         <div>
-          <h3 className="text-3xl font-semibold relative inline">
+          <h3 className="text-2xl font-semibold relative inline">
             About Me
             <div className="absolute left-0 bottom-0 h-0.5 bg-stone-200 w-[55px]" />
           </h3>
-          <p className="text-lg mt-8 text-[#bbb]">
+          <p className="mt-8 text-[#bbb]">
             I am a fullstack developer with a passion for creating efficient and
             scalable web applications. My expertise lies in both frontend and
             backend development, allowing me to build complete solutions that
@@ -184,12 +184,12 @@ export default function Home() {
         </div>
 
         <div className="mt-28">
-          <h3 className="text-3xl font-semibold relative inline">
+          <h3 className="text-2xl font-semibold relative inline">
             Tools, Technologies & Skills
             <div className="absolute left-0 bottom-0 h-0.5 bg-stone-200 w-[55px]" />
           </h3>
 
-          <p className="text-lg mt-8 text-[#bbb]">
+          <p className="mt-8 text-[#bbb]">
             <strong className="text-stone-200">🖥 Frontend:</strong>
             <br />
             React, Next.js, Tailwind CSS, TypeScript
@@ -212,21 +212,21 @@ export default function Home() {
         </div>
 
         <div className="mt-28">
-          <h3 className="text-3xl font-semibold relative inline">
+          <h3 className="text-2xl font-semibold relative inline">
             Education
             <div className="absolute left-0 bottom-0 h-0.5 bg-stone-200 w-[55px]" />
           </h3>
 
           <div className="flex mt-8 items-center">
             <MarwadiUniversityLogo className="w-12 mr-5 hidden sm:block" />
-            <p className="text-lg text-[#bbb]">
+            <p className="text-[#bbb]">
               <strong className="text-stone-200">
                 Diploma, Information & Communication Technology
               </strong>
               <br />
               <span className="text-stone-400">Marwadi University, Rajkot</span>
               <br />
-              <span className="text-stone-400">
+              <span className="text-stone-400 text-sm">
                 2022 - 2025 | CGPA: 9.34/10
               </span>
             </p>
@@ -234,14 +234,14 @@ export default function Home() {
 
           <div className="flex mt-8 items-center">
             <AtmiyaSchoolLogo className="w-12 mr-5 hidden sm:block" />
-            <p className="text-lg text-[#bbb]">
+            <p className="text-[#bbb]">
               <strong className="text-stone-200">GSEB SSC (10th Grade)</strong>
               <br />
               <span className="text-stone-400">
                 Atmiya Vidya Sankul, Paddhari
               </span>
               <br />
-              <span className="text-stone-400 text-md">
+              <span className="text-stone-400 text-sm">
                 2022 | 89.06 Percentile
               </span>
             </p>
