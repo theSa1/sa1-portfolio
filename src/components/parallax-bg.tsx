@@ -8,7 +8,7 @@ const generateStars = (count: number) => {
   return Array.from({ length: count }, (_, i) => {
     const size = Math.floor(Math.random() * 5) + 1;
     const left = Math.random() * 100;
-    const top = Math.random() * 150 - 50;
+    const top = Math.random() * 120 - 20;
 
     return (
       <div
@@ -118,7 +118,9 @@ export const ParallaxBg = () => {
   }, [stars]);
 
   useEffect(() => {
-    const starCount = 250;
+    if (!window) return;
+    const isMobile = window.innerWidth < 768;
+    const starCount = isMobile ? 50 : 150;
     setStars(generateStars(starCount));
   }, []);
 

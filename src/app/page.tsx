@@ -15,7 +15,7 @@ import SplitText from "gsap/dist/SplitText";
 
 export default function Home() {
   useGSAP(() => {
-    gsap.registerPlugin(SplitText, ScrollSmoother, ScrollTrigger);
+    gsap.registerPlugin(useGSAP, SplitText, ScrollSmoother, ScrollTrigger);
 
     ScrollSmoother.create({
       content: "main",
