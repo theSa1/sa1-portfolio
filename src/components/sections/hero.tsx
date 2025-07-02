@@ -29,7 +29,7 @@ const socialLinks = [
 
 export const HeroSection = () => {
   return (
-    <div className="h-dvh flex flex-col justify-center">
+    <div className="h-svh flex flex-col justify-center">
       <div className="h-16 sm:h-0"></div>
       <h1 className="sm:text-4xl text-3xl font-bold" id="hero-line-1">
         Hey! 👋

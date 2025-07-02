@@ -17,8 +17,8 @@ const generateStars = (count: number) => {
         style={{
           width: `${size}px`,
           height: `${size}px`,
-          left: `${left}vw`,
-          top: `${top}vh`,
+          left: `${left}dvw`,
+          top: `${top}dvh`,
           opacity: 0,
         }}
       />
@@ -124,5 +124,5 @@ export const ParallaxBg = () => {
     setStars(generateStars(starCount));
   }, []);
 
-  return <div className="bg fixed -z-10 h-dvh w-dvw">{stars}</div>;
+  return <div className="bg fixed -z-10 h-lvh w-dvw">{stars}</div>;
 };
