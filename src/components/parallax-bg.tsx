@@ -13,7 +13,7 @@ const generateStars = (count: number) => {
     return (
       <div
         key={i}
-        className={`absolute rounded-full bg-white opacity-50 star-size-${size}`}
+        className={`absolute rounded-full bg-white star-${i} star-size-${size}`}
         style={{
           width: `${size}px`,
           height: `${size}px`,
@@ -39,59 +39,81 @@ export const ParallaxBg = () => {
     ];
 
     gsap.to(allStarsClasses.join(", "), {
-      opacity: 0.4,
+      opacity: 0.2,
       duration: 1,
     });
 
-    const centerX = window.innerWidth / 2;
-    const centerY = window.innerHeight / 2;
-
     const stars: HTMLElement[] = gsap.utils.toArray(allStarsClasses.join(", "));
 
-    stars.forEach((star) => {
+    stars.forEach((star, index) => {
       const size = parseInt(
         (star as HTMLElement).className.match(/star-size-(\d+)/)?.[1] || "1"
       );
-      const rect = (star as HTMLElement).getBoundingClientRect();
-      const dx = rect.left + rect.width / 2 - centerX;
-      const dy = rect.top + rect.height / 2 - centerY;
 
-      star.dataset.dx = dx.toString();
-      star.dataset.dy = dy.toString();
-      star.dataset.size = size.toString();
-    });
+      const getMovementRange = (size: number) => {
+        switch (size) {
+          case 1:
+            return { x: 20, y: 15 };
+          case 2:
+            return { x: 30, y: 20 };
+          case 3:
+            return { x: 40, y: 25 };
+          case 4:
+            return { x: 50, y: 30 };
+          case 5:
+            return { x: 60, y: 35 };
+          default:
+            return { x: 30, y: 20 };
+        }
+      };
 
-    const getMultiplier = (size: number) => {
-      switch (size) {
-        case 1:
-          return 0.5;
-        case 2:
-          return 0.6;
-        case 3:
-          return 0.75;
-        case 4:
-          return 1;
-        case 5:
-          return 1.25;
-        default:
-          return 1;
+      const range = getMovementRange(size);
+      const duration = 15 + Math.random() * 30;
+      const tl = gsap.timeline({ repeat: -1, yoyo: true });
+      const waypoints = 7 + Math.floor(Math.random() * 3);
+
+      // Create a wrapper element for the free movement
+      const wrapper = document.createElement("div");
+      wrapper.style.position = "absolute";
+      wrapper.style.width = "100%";
+      wrapper.style.height = "100%";
+      star.parentNode?.insertBefore(wrapper, star);
+      wrapper.appendChild(star);
+
+      // Free movement animation on the wrapper
+      for (let i = 0; i < waypoints; i++) {
+        const x = (Math.random() - 0.5) * range.x;
+        const y = (Math.random() - 0.5) * range.y;
+
+        tl.to(wrapper, {
+          x: x,
+          y: y,
+          duration: duration / waypoints,
+          ease: "sine.inOut",
+        });
       }
-    };
 
-    gsap.to(stars, {
-      x: (i, target) =>
-        parseInt(target.dataset.dx) *
-        getMultiplier(parseInt(target.dataset.size)),
-      y: (i, target) =>
-        parseInt(target.dataset.dy) *
-        getMultiplier(parseInt(target.dataset.size)),
-      scrollTrigger: {
-        trigger: "body",
-        start: "top top",
-        end: "bottom bottom",
-        scrub: true,
-      },
-      overwrite: "auto",
+      // Parallax scroll animation on the star itself
+      gsap.to(star, {
+        y: 200 * (size / 5), // Different speeds based on star size
+        scrollTrigger: {
+          trigger: "body",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: true,
+        },
+      });
+
+      // Scale animation
+      if (Math.random() > 0.7) {
+        gsap.to(star, {
+          scale: 1.2,
+          duration: 3 + Math.random() * 4,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+        });
+      }
     });
   }, [stars]);
 
@@ -100,5 +122,5 @@ export const ParallaxBg = () => {
     setStars(generateStars(starCount));
   }, []);
 
-  return <div className="bg fixed -z-10 h-dvh w-dvw blur-[1px]">{stars}</div>;
+  return <div className="bg fixed -z-10 h-dvh w-dvw">{stars}</div>;
 };
