@@ -17,8 +17,8 @@ const generateStars = (count: number) => {
         style={{
           width: `${size}px`,
           height: `${size}px`,
-          left: `${left}dvw`,
-          top: `${top}dvh`,
+          left: `${left}lvw`,
+          top: `${top}lvh`,
           opacity: 0,
         }}
       />
