@@ -15,3 +15,8 @@
 body {
   @apply bg-stone-950 text-stone-200 font-sans;
 }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
+}
