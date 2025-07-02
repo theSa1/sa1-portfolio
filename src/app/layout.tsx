@@ -1,7 +1,6 @@
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import "./globals.css";
-import { LenisScrollWrapper } from "@/components/lenis-scroll-wrapper";
 
 export const metadata: Metadata = {
   title: "Savan | Portfolio",
@@ -17,9 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>
-        <LenisScrollWrapper>{children}</LenisScrollWrapper>
-      </body>
+      <body className={`${inter.className} antialiased`}>{children}</body>
     </html>
   );
 }
