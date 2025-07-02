@@ -137,13 +137,13 @@ export default function Home() {
             Hey! 👋
           </h1>
           <h2 className="text-6xl mt-2 font-semibold" id="hero-line-2">
-            I'm Savan
+            I&apos;m Savan
           </h2>
           <p className="text-lg mt-8 text-[#bbb]" id="hero-para">
-            I'm a fullstack developer focused on building solutions that address
-            real-world challenges. I have a strong interest in DevOps and enjoy
-            working across infrastructure and cutting-edge backend technologies.
-            I create efficient, scalable applications for the web.
+            I&apos;m a fullstack developer focused on building solutions that
+            address real-world challenges. I have a strong interest in DevOps
+            and enjoy working across infrastructure and cutting-edge backend
+            technologies. I create efficient, scalable applications for the web.
           </p>
           <div className="mt-8 flex space-x-4" id="hero-social-links">
             {socialLinks.map((link) => {
