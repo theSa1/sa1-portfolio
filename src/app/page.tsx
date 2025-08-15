@@ -9,6 +9,7 @@ import { HeroSection } from "@/components/sections/hero";
 import { ToolsAndTechnologiesSection } from "@/components/sections/tools";
 import { useGSAP } from "@gsap/react";
 import { registerGSAPPlugins } from "@/lib/gsap";
+import { ProjectsSection } from "@/components/sections/projects";
 
 export default function Home() {
   useGSAP(() => {
@@ -31,6 +32,8 @@ export default function Home() {
         <ToolsAndTechnologiesSection />
 
         <EducationSection />
+
+        <ProjectsSection />
 
         <Footer />
       </main>

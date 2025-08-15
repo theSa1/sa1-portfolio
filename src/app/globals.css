@@ -13,7 +13,7 @@
 }
 
 body {
-  @apply bg-stone-950 text-stone-200 font-sans;
+  @apply bg-primary-bg text-primary-text font-sans;
 }
 
 html {

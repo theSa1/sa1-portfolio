@@ -8,6 +8,7 @@ import { ScrollIndicator } from "../icons/scroll-indicator";
 import { XIcon } from "../icons/x";
 import { registerGSAPPlugins, gsap } from "@/lib/gsap";
 import SplitText from "gsap/dist/SplitText";
+import { MapPinIcon } from "../icons/map-pin";
 
 const socialLinks = [
   {
@@ -47,7 +48,7 @@ export const HeroSection = () => {
       charsClass: "line2-chars",
     });
     const paraSplit = SplitText.create("#hero-para", {
-      type: "lines, words",
+      type: "lines",
       linesClass: "para-lines",
     });
 
@@ -84,6 +85,7 @@ export const HeroSection = () => {
     tl.from(
       [
         ...paraSplit.lines,
+        document.querySelector("#hero-location"),
         document.querySelector("#hero-social-links"),
         document.querySelector("#hero-scroll-indicator"),
       ],
@@ -104,17 +106,19 @@ export const HeroSection = () => {
     <div className="h-svh flex flex-col justify-center" id="home">
       <div className="h-16 sm:h-0"></div>
       <h1 className="sm:text-4xl text-3xl font-bold" id="hero-line-1">
-        Hey! 👋
+        Hey there,
       </h1>
       <h2 className="sm:text-5xl text-4xl mt-2 font-semibold" id="hero-line-2">
         I&apos;m Savan
       </h2>
-      <p className="sm:mt-8 mt-6 text-secondary-text" id="hero-para">
-        I&apos;m a fullstack developer focused on building solutions that
-        address real-world challenges. I have a strong interest in DevOps and
-        enjoy working across infrastructure and cutting-edge backend
-        technologies. I create efficient, scalable applications for the web.
+      <p className="mt-4 text-secondary-text" id="hero-para">
+        I&#39;m a Full-Stack Developer and DevOps enthusiast with a passion for
+        building efficient, scalable, and reliable web applications.
       </p>
+      <div className="flex items-center gap-2 mt-4" id="hero-location">
+        <MapPinIcon className="inline-block w-5 h-5 text-secondary-text" />
+        <p className="text-secondary-text">Gujarat, India</p>
+      </div>
       <div className="sm:mt-8 mt-6 flex space-x-4" id="hero-social-links">
         {socialLinks.map((link) => {
           const Icon = link.icon;

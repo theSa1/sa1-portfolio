@@ -47,7 +47,7 @@ export const EducationSection = () => {
       <div className="flex mt-8 items-center" id="education-line-1">
         <MarwadiUniversityLogo className="w-12 mr-5 hidden sm:block" />
         <p className="text-secondary-text">
-          <strong className="text-primabg-primary-text">
+          <strong className="text-primary-text">
             Diploma, Information & Communication Technology
           </strong>
           <br />
@@ -64,9 +64,7 @@ export const EducationSection = () => {
       <div className="flex mt-8 items-center" id="education-line-2">
         <AtmiyaSchoolLogo className="w-12 mr-5 hidden sm:block" />
         <p className="text-secondary-text">
-          <strong className="text-primabg-primary-text">
-            GSEB SSC (10th Grade)
-          </strong>
+          <strong className="text-primary-text">GSEB SSC (10th Grade)</strong>
           <br />
           <span className="text-secondary-text">
             Atmiya Vidya Sankul, Paddhari

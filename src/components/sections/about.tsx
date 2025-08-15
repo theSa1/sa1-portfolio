@@ -5,38 +5,38 @@ import { useGSAP } from "@gsap/react";
 import SplitText from "gsap/dist/SplitText";
 
 export const AboutSection = () => {
-  useGSAP(() => {
-    registerGSAPPlugins();
+  // useGSAP(() => {
+  //   registerGSAPPlugins();
 
-    const split = new SplitText(".about-text", { type: "lines" });
+  //   const split = new SplitText(".about-text", { type: "lines" });
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#about",
-        start: "top 90%",
-        end: "bottom 70%",
-        scrub: true,
-      },
-    });
+  //   const tl = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: "#about",
+  //       start: "top 90%",
+  //       end: "bottom 70%",
+  //       scrub: true,
+  //     },
+  //   });
 
-    tl.from("#about-title", {
-      duration: 0.5,
-      opacity: 0,
-      x: -50,
-      ease: "circ",
-    });
+  //   tl.from("#about-title", {
+  //     duration: 0.5,
+  //     opacity: 0,
+  //     // x: -50,
+  //     ease: "circ",
+  //   });
 
-    tl.from(split.lines, {
-      duration: 0.5,
-      opacity: 0,
-      x: -50,
-      stagger: {
-        amount: 0.04,
-        from: "start",
-      },
-      ease: "circ",
-    });
-  }, []);
+  //   tl.from(split.lines, {
+  //     duration: 2,
+  //     opacity: 0,
+  //     // x: -50,
+  //     stagger: {
+  //       amount: 0.04,
+  //       from: "start",
+  //     },
+  //     ease: "circ",
+  //   });
+  // }, []);
 
   return (
     <div id="about">
