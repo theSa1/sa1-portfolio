@@ -1,9 +1,5 @@
 "use client";
 
-import { gsap, registerGSAPPlugins } from "@/lib/gsap";
-import { useGSAP } from "@gsap/react";
-import SplitText from "gsap/dist/SplitText";
-
 export const AboutSection = () => {
   // useGSAP(() => {
   //   registerGSAPPlugins();

@@ -1,11 +1,7 @@
 "use client";
 
 import { useGSAP } from "@gsap/react";
-import { GithubIcon } from "../icons/github";
-import { LinkedinIcon } from "../icons/linkedin";
-import { MailIcon } from "../icons/mail";
 import { ScrollIndicator } from "../icons/scroll-indicator";
-import { XIcon } from "../icons/x";
 import { registerGSAPPlugins, gsap } from "@/lib/gsap";
 import SplitText from "gsap/dist/SplitText";
 import { MapPinIcon } from "../icons/map-pin";

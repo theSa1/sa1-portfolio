@@ -1,9 +1,4 @@
-import { useGSAP } from "@gsap/react";
-import { AtmiyaSchoolLogo } from "../icons/atmiya-school-logo";
-import { MarwadiUniversityLogo } from "../icons/marwadi-logo";
-import { gsap, registerGSAPPlugins } from "@/lib/gsap";
 import { GraduationCapIcon } from "lucide-react";
-import { Fragment } from "react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
 export const EducationSection = () => {
@@ -28,16 +23,6 @@ export const EducationSection = () => {
               Government Engineering College, Rajkot
             </h4>
             <div className="flex">
-              {/* {["B.Tech, AI&DS", "2025 - 2028"].map((text, index) => (
-                <Fragment key={index}>
-                  <p className="text-sm text-neutral-400">
-                    {text}
-                    {index < 1 && (
-                      <span className="mx-1 text-neutral-600">|</span>
-                    )}
-                  </p>
-                </Fragment>
-              ))} */}
               <p className="text-sm text-neutral-400">
                 B.Tech,{" "}
                 <Tooltip>
@@ -86,7 +71,8 @@ export const EducationSection = () => {
             <div className="mt-3">
               <ul className="list-disc list-outside ml-7 space-y-2 marker:text-neutral-500 marker:text-lg">
                 <li>
-                  Started a startup under the university's incubation center
+                  Started a startup under the university&rsquo;s incubation
+                  center
                 </li>
                 <ul className="list-disc list-outside ml-7 space-y-2 marker:text-neutral-500 marker:text-lg">
                   <li>
@@ -106,7 +92,8 @@ export const EducationSection = () => {
                 </li>
                 <ul className="list-disc list-outside ml-7 space-y-2 marker:text-neutral-500 marker:text-lg">
                   <li>
-                    Created a AI powered student companion web app "AdhyAI"
+                    Created a AI powered student companion web app
+                    &quot;AdhyAI&quot;
                   </li>
                   <li>
                     Used Retrieval Augmented Generation (RAG) to answer student

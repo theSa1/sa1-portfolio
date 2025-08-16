@@ -1,8 +1,7 @@
 "use client";
 
-import { gsap, registerGSAPPlugins } from "@/lib/gsap";
+import { registerGSAPPlugins } from "@/lib/gsap";
 import { useGSAP } from "@gsap/react";
-import SplitText from "gsap/dist/SplitText";
 import { JavaScriptIcon } from "../icons/technologies/javascript";
 import { TypeScriptIcon } from "../icons/technologies/typescript";
 import { PythonIcon } from "../icons/technologies/python";
