@@ -9,31 +9,29 @@ import { XIcon } from "../icons/x";
 import { registerGSAPPlugins, gsap } from "@/lib/gsap";
 import SplitText from "gsap/dist/SplitText";
 import { MapPinIcon } from "../icons/map-pin";
-
-const socialLinks = [
-  {
-    name: "GitHub",
-    href: "https://github.com/thesa1",
-    icon: GithubIcon,
-  },
-  {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/in/savan-bhanderi/",
-    icon: LinkedinIcon,
-  },
-  {
-    name: "X",
-    href: "https://x.com/sa1wasTooShort",
-    icon: XIcon,
-  },
-  {
-    name: "Email",
-    href: "mailto:i@sa1.dev",
-    icon: MailIcon,
-  },
-];
+import { useEffect, useRef, useState } from "react";
+import { socialLinks } from "@/lib/consts";
 
 export const HeroSection = () => {
+  const [showHeader, setShowHeader] = useState(true);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      if (scrollY > lastScrollY.current && scrollY > 40) {
+        setShowHeader(false);
+      } else {
+        setShowHeader(true);
+      }
+      lastScrollY.current = scrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   useGSAP(() => {
     registerGSAPPlugins();
 
@@ -102,6 +100,23 @@ export const HeroSection = () => {
     );
   }, []);
 
+  useGSAP(() => {
+    const tl = gsap.timeline();
+    if (showHeader) {
+      tl.to("header", {
+        duration: 0.5,
+        y: 0,
+        ease: "circ.out",
+      });
+    } else {
+      tl.to("header", {
+        duration: 0.5,
+        y: -200,
+        ease: "circ.in",
+      });
+    }
+  }, [showHeader]);
+
   return (
     <div className="h-svh flex flex-col justify-center" id="home">
       <div className="h-16 sm:h-0"></div>
@@ -112,8 +127,8 @@ export const HeroSection = () => {
         I&apos;m Savan
       </h2>
       <p className="mt-4 text-secondary-text" id="hero-para">
-        I&#39;m a Full-Stack Developer and DevOps enthusiast with a passion for
-        building efficient, scalable, and reliable web applications.
+        I&#39;m a Full-Stack Developer and DevOps enthusiast creating efficient,
+        scalable, and reliable applications.
       </p>
       <div className="flex items-center gap-2 mt-4" id="hero-location">
         <MapPinIcon className="inline-block w-5 h-5 text-secondary-text" />

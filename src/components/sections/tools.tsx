@@ -156,7 +156,7 @@ export const ToolsAndTechnologiesSection = () => {
                 const Icon = item.icon;
                 return (
                   <div
-                    className="px-3 py-2 flex gap-3 items-center border border-primary-text rounded-lg"
+                    className="px-3 py-2 flex gap-3 items-center border border-primary-text rounded-lg hide-pointer hover:scale-110 transition-transform duration-200 ease-in-out"
                     key={item.name}
                   >
                     <Icon className="w-7 h-7 text-primary-text" />
