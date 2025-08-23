@@ -47,7 +47,7 @@ export const ContactSection = () => {
         const result = await res.json();
         toast.error(result.error || "Failed to send message.", { id: t });
       }
-    } catch (e) {
+    } catch {
       toast.error("Failed to send message.", { id: t });
     }
   };
