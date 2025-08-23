@@ -11,8 +11,10 @@ import {
   FormLabel,
   FormMessage,
 } from "../ui/form";
+
 import { Button } from "../ui/button";
 import { socialLinks } from "@/lib/consts";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   name: z.string().min(2).max(100),
@@ -30,8 +32,24 @@ export const ContactSection = () => {
     },
   });
 
-  const onSubmit = (data: z.infer<typeof formSchema>) => {
-    console.log(data);
+  const onSubmit = async (data: z.infer<typeof formSchema>) => {
+    const t = toast.loading("Sending message...");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        toast.success("Message sent successfully!", { id: t });
+        form.reset();
+      } else {
+        const result = await res.json();
+        toast.error(result.error || "Failed to send message.", { id: t });
+      }
+    } catch (e) {
+      toast.error("Failed to send message.", { id: t });
+    }
   };
 
   return (
