@@ -6,7 +6,9 @@ import { registerGSAPPlugins, gsap } from "@/lib/gsap";
 import SplitText from "gsap/dist/SplitText";
 import { MapPinIcon } from "../icons/map-pin";
 import { useEffect, useRef, useState } from "react";
+import { Button } from "../ui/button";
 import { socialLinks } from "@/lib/consts";
+import { Download } from "lucide-react";
 
 export const HeroSection = () => {
   const [showHeader, setShowHeader] = useState(true);
@@ -130,7 +132,10 @@ export const HeroSection = () => {
         <MapPinIcon className="inline-block w-5 h-5 text-secondary-text" />
         <p className="text-secondary-text">Gujarat, India</p>
       </div>
-      <div className="sm:mt-8 mt-6 flex space-x-4" id="hero-social-links">
+      <div
+        className="sm:mt-8 mt-6 flex gap-4 items-center"
+        id="hero-social-links"
+      >
         {socialLinks.map((link) => {
           const Icon = link.icon;
           return (
@@ -145,6 +150,17 @@ export const HeroSection = () => {
             </a>
           );
         })}
+        <a
+          href="/Savan%20Bhanderi%20Resume.pdf"
+          download
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button variant="outline">
+            <Download className="inline-block w-4 h-4 mr-1" />
+            Resume
+          </Button>
+        </a>
       </div>
       <div
         className="flex items-center justify-center sm:mt-8 mt-6"

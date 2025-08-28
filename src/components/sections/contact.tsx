@@ -112,7 +112,7 @@ export const ContactSection = () => {
             )}
           />
           <div className="flex items-center gap-4">
-            <Button type="submit" size="lg">
+            <Button type="submit" size="lg" variant="secondary">
               Submit
             </Button>
             {socialLinks.map((link) => {
